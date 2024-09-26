@@ -1,3 +1,13 @@
 *{
   font-family: "Isidora Sans Alt";
 }
+
+/* Apply the background image to the parent container */
+.background_container {
+  background-image: url('../../assets/Background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  position: relative; 
+}
