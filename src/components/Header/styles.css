@@ -1,28 +1,48 @@
-/* styles.css */
-.background_image {
-    background-image: url('../../assets/Background.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; 
-    background-repeat: no-repeat;
-  }
-  .navbar{
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(153, 153, 153, 0.02) 100%);
-    border-bottom: 1px solid #FFF;
-  }
-  
-  .home {
- color: #F69625;
-    font-family: "Isidora Sans Alt";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
+/* Apply the background image to the parent container */
+.background_container {
+  background-image: url('../../assets/Background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  position: relative;
+   
+}
 
-  .nav_color{
-    color:'#FFF';
-    font-size: 18px;
-    font-weight: 400;
+/* Styles for the navbar */
+.navbar {
+  border-bottom: 1px solid #fff;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(153, 153, 153, 0.02) 100%);
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
 
-  }
+}
+
+/* Navbar items */
+.home {
+  color: #f69625;
+  font-family: 'Isidora Sans Alt';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.nav_color {
+  color: #ccc1c1;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.button_title{
+  font-family: 'brillant';
+  display: grid;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.70);
+  font-size: 24px;
+  font-weight: 400;
+   text-align: center;
+  color: black;
+  padding: 5px 50px;
+  gap:-10px;
+}
