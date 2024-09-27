@@ -2,23 +2,21 @@ const LargeScreenNavbar = () => {
   return (
     <>
       <ul className="hidden md:flex space-x-8">
-        <li className="text-yellow-400 cursor-pointer">Home</li>
-        <li className="cursor-pointer text-gray-300 hover:text-yellow-400">
-          Reservation
+        <li className=" cursor-pointer text-[#F69625]">Home</li>
+        <li className="cursor-pointer text-[#fff] hover:text-[#F69625]">
+          RESERVATION
         </li>
-        <li className="cursor-pointer text-gray-300 hover:text-yellow-400">
-          Menu
+        s
+        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
+          MENU
         </li>
-        <li className="cursor-pointer text-gray-300 hover:text-yellow-400">
-          Offers
+        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
+          OFFERS
         </li>
-        <li className="cursor-pointer text-gray-300 hover:text-yellow-400">
-          Contact
+        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
+          CONTACT
         </li>
       </ul>
-      <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
-        Book a Table
-      </button>
     </>
   );
 };

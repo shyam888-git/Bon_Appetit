@@ -1,0 +1,14 @@
+@media (max-width:1000){
+    .logo_container{
+        display: none;
+    }
+}
+
+
+@media (max-width:650){
+    .mobile_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
