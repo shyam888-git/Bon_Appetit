@@ -6,7 +6,7 @@ const LargeScreenNavbar = () => {
         <li className="cursor-pointer text-[#fff] hover:text-[#F69625]">
           RESERVATION
         </li>
-        s
+
         <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
           MENU
         </li>
