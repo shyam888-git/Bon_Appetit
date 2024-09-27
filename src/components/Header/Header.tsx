@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import "./styles.css";
-const Hero = ({ currentSlide, titles }) => {
+const Header = ({ currentSlide, titles }) => {
   const [mainTitle, subTitle] = titles[currentSlide]; // Map titles based on currentSlide
 
   return (
@@ -23,4 +23,4 @@ const Hero = ({ currentSlide, titles }) => {
   );
 };
 
-export default Hero;
+export default Header;
