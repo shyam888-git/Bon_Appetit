@@ -1,30 +1,5 @@
-import React, { useState, useEffect } from "react";
 
-const Carousel = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const goToPrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + images.length) % images.length
-    );
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
-
+const Carousel = ({ images, currentSlide }) => {
   return (
     <div
       id="default-carousel"
