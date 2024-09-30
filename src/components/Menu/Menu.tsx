@@ -30,9 +30,11 @@ const Menu = () => {
   return (
     <div className="bg-[#FFF7EB] mb-4">
       <div className="flex justify-between mx-20 gap-5 items-center py-8 ">
-        <h2 className="text-[48px] ">
-          Our <strong className="text-[#F69625]">Menu</strong>
-        </h2>
+        <div className="flex justify-center items-center px-8">
+          <h2 className="text-[48px] ">
+            Our <strong className="text-[#F69625]">Menu</strong>
+          </h2>
+        </div>
         <div className="flex justify-center items-center gap-4">
           <FaChevronLeft size={24} />
           {categories.map((category, index) => (
