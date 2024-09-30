@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center border-[2px] border-[#818080] justify-between py-4 px-4 bg-transparent text-white fixed top-0 left-0 right-0 z-50 shadow-[0px_4px_6px_rgba(0,0,0,0.1)] navbar">
+    <nav className="flex items-center border-[2px] border-[#818080] justify-between py-4 px-4 bg-transparent text-white  top-0 left-0 right-0 z-50 shadow-[0px_4px_6px_rgba(0,0,0,0.1)]  navbar">
       <div className="flex items-center space-x-4 ">
         {isMobile && <MobileNavbar />}
         <div className="lg:flex items-center space-x-4 hidden logo_container">

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Hero from "@/components/Header/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import background1 from "../assets/Background1.png";
 import background2 from "../assets/Background2..png";
 import background3 from "../assets/Background5.png";
 import background4 from "../assets/Bakground6.png";
 import Carousel from "@/components/ui/carousel";
+import Header from "@/components/Header/Header";
 
 // List of titles corresponding to each image
 const titles = [
@@ -35,7 +35,7 @@ const HeaderLayout = () => {
 
       <div className="absolute inset-0 z-10">
         <Navbar />
-        <Hero currentSlide={currentSlide} titles={titles} />
+        <Header currentSlide={currentSlide} titles={titles} />
       </div>
     </div>
   );

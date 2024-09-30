@@ -1,4 +1,3 @@
-
 const Carousel = ({ images, currentSlide }) => {
   return (
     <div
@@ -6,7 +5,7 @@ const Carousel = ({ images, currentSlide }) => {
       className="relative w-full h-full"
       data-carousel="slide"
     >
-      <div className="relative h-full overflow-hidden rounded-lg">
+      <div className=" h-full overflow-hidden rounded-lg">
         {images.map((image, index) => (
           <div
             key={index}
