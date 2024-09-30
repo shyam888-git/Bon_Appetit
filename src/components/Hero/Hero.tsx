@@ -54,8 +54,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-10 lg:px-32 items-center justify-start gap-4 p-4 py-4 mb-8 bg-[#FAFAFA]">
-      <div className="flex flex-col items-start lg:w-1/3">
+    <div className="flex flex-col lg:flex-row lg:gap-10 lg:px-32 items-center justify-start gap-4 p-4 py-4 bg-[#FAFAFA]">
+      <div className="flex flex-col items-start lg:w-1/3 mb-5">
         <div className="flex items-center mt-4">
           <h2 className="text-6xl lg:text-8xl font-normal text-[#F69625]">
             HOT
@@ -73,7 +73,7 @@ const Hero = () => {
           Available till 15th Sept
         </span>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 mb-5">
         {/* Disable left arrow if at the first slide */}
         <FaChevronLeft
           size={24}

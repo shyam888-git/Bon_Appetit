@@ -1,0 +1,35 @@
+.menu_container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .offer-card {
+    background-color: #FFF7EB;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14rem;
+  }
+  
+  .offer-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures the image maintains aspect ratio and fills the box */
+  }
+  
+  @media (max-width: 1200px) {
+    .menu_container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu_container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
