@@ -1,5 +1,5 @@
 import "./App.css";
-import Gallery from "./components/Card/Card";
+import Gallery from "./components/Galleries/Galleries";
 import Hero from "./components/Hero/Hero";
 import Menu from "./components/Menu/Menu";
 import HeaderLayout from "./Layout/HeaderLayout";
