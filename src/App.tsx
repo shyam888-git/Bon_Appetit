@@ -7,10 +7,10 @@ import HeaderLayout from "./Layout/HeaderLayout";
 const App = () => {
   return (
     <div className="px-0">
-      <HeaderLayout />
+      {/* <HeaderLayout /> */}
       <Hero />
       <Menu />
-      <Gallery />
+      {/* <Gallery /> */}
     </div>
   );
 };
