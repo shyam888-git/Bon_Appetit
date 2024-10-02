@@ -29,23 +29,46 @@ const offers = [
 const Menu = () => {
   return (
     <div className="bg-[#FFF7EB]  ">
-      <div className="mx-16  ">
+      <div className="mx-4 lg:mx-20  ">
         <div className="flex  justify-center  gap-8 lg:gap-1 lg:justify-between  items-center pb-8 ">
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-between gap-16 mt-12">
             <h1 className="text-[20px] lg:text-[32px] md:text-[32px] sm:[32px]">
               Our <strong className="text-[#F69625]">Menu</strong>
             </h1>
             <div className=" hidden lg:flex justify-center items-center gap-2">
-              <FaChevronLeft size={24} color="#402E32" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="19"
+                viewBox="0 0 11 19"
+                fill="none"
+              >
+                <path
+                  d="M10 17.5L2 9.5L10 1.5"
+                  stroke="black"
+                  stroke-width="2"
+                />
+              </svg>
               {categories.map((category, index) => (
-                <span key={index} className="bg-[#FFEACD] px-3 py-2 rounded">
+                <span
+                  key={index}
+                  className="bg-[#FFEACD] text-[#402E32] text-[16px] px-4 py-2 rounded-[10px]"
+                >
                   {category}
                 </span>
               ))}
-              <FaChevronRight size={24} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="19"
+                viewBox="0 0 11 19"
+                fill="none"
+              >
+                <path d="M1 1.5L9 9.5L1 17.5" stroke="black" stroke-width="2" />
+              </svg>
             </div>
           </div>
-          <Button className="bg-[#F69625] text-[#fff] px-4 py-2 rounded-lg">
+          <Button className="bg-[#F69625] text-[#fff] px-4 py-2 rounded-lg mt-12">
             View All
           </Button>
         </div>

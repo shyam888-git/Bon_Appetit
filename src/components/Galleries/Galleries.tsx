@@ -41,22 +41,23 @@ const images = [
     alt: "Baby Showers",
     description: "Baby Showers",
   },
-  // Add more images here if needed
 ];
 
 const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const length = images.length;
-
   const handlePrevious = () => {
-    const newIndex = (currentIndex - 3 + length) % length;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 3, 0));
   };
 
   const handleNext = () => {
-    const newIndex = (currentIndex + 3) % length;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) =>
+      Math.min(prevIndex + 3, Math.max(images.length - 3, 0))
+    );
   };
+
+  const visibleImages = images.slice(currentIndex, currentIndex + 3);
+  const canGoPrevious = currentIndex > 0;
+  const canGoNext = currentIndex + 3 < images.length;
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -69,16 +70,10 @@ const Gallery = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const visibleImages = [
-    images[currentIndex % length],
-    images[(currentIndex + 1) % length],
-    images[(currentIndex + 2) % length],
-  ];
-
   return (
     <div className="grid justify-center p-4">
-      <h2 className="text-3xl font-normal text-[#402E32] mb-4">
-        Booking for <strong className="text-[#F69625]">Events</strong>
+      <h2 className="text-3xl  text-[#402E32] mb-6 mt-6">
+        Booking for <strong className="text-[#F69625] ">Events</strong>
       </h2>
 
       <div
@@ -87,11 +82,20 @@ const Gallery = () => {
         } justify-center items-center -mx-2`}
       >
         {!isMobile && (
-          <FaChevronLeft
-            size={24}
-            className="cursor-pointer"
-            onClick={handlePrevious}
-          />
+          // <FaChevronLeft
+          //   size={24}
+          //   className="cursor-pointer"
+          //   onClick={canGoPrevious ? handlePrevious : undefined}
+          // />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="11"
+            height="19"
+            viewBox="0 0 11 19"
+            fill="none"
+          >
+            <path d="M10 17.5L2 9.5L10 1.5" stroke="black" stroke-width="2" />
+          </svg>
         )}
 
         {visibleImages.map((image, index) => (
@@ -104,20 +108,29 @@ const Gallery = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className={`w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110 ${
+              className={`w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-105 ${
                 isMobile ? "max-w-[300px] max-h-[300px]" : ""
               }`}
             />
-            <div className="p-4 text-left">{image.description}</div>
+            <div className="px-2 py-4 text-left">{image.description}</div>
           </div>
         ))}
 
         {!isMobile && (
-          <FaChevronRight
-            size={24}
-            className="cursor-pointer"
-            onClick={handleNext}
-          />
+          // <FaChevronRight
+          //   size={24}
+          //   className="cursor-pointer"
+          //   onClick={canGoNext ? handleNext : undefined}
+          // />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="11"
+            height="19"
+            viewBox="0 0 11 19"
+            fill="none"
+          >
+            <path d="M1 1.5L9 9.5L1 17.5" stroke="black" stroke-width="2" />
+          </svg>
         )}
       </div>
     </div>

@@ -77,13 +77,27 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <FaChevronLeft
+            {/* <FaChevronLeft
               size={24}
               onClick={prevSlide}
               className={`cursor-pointer ${
                 currentIndex === 0 ? "opacity-50" : "opacity-100"
               }`}
-            />
+            /> */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11"
+              height="19"
+              viewBox="0 0 11 19"
+              fill="none"
+              onClick={prevSlide}
+              className={`cursor-pointer ${
+                currentIndex === 0 ? "opacity-50" : "opacity-100"
+              }`}
+            >
+              <path d="M10 17.5L2 9.5L10 1.5" stroke="black" stroke-width="2" />
+            </svg>
+
             <div className="flex lg:gap-8 md:lg-6  overflow-x-auto lg:overflow-x-visible">
               {offers
                 .slice(currentIndex, currentIndex + itemsToShow)
@@ -110,15 +124,26 @@ const Hero = () => {
                   </div>
                 ))}
             </div>
-            <FaChevronRight
+            {/* <FaChevronRight
               size={24}
               onClick={nextSlide}
+             
+            /> */}
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11"
+              height="19"
+              viewBox="0 0 11 19"
+              fill="none"
               className={`cursor-pointer ${
                 currentIndex + itemsToShow >= offers.length
                   ? "opacity-50"
                   : "opacity-100"
               }`}
-            />
+            >
+              <path d="M1 1.5L9 9.5L1 17.5" stroke="black" stroke-width="2" />
+            </svg>
           </div>
         </div>
       </div>
