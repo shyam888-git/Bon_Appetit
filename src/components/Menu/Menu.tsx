@@ -29,10 +29,10 @@ const offers = [
 const Menu = () => {
   return (
     <div className="bg-[#FFF7EB]  ">
-      <div className="mx-8  ">
+      <div className="mx-16  ">
         <div className="flex  justify-center  gap-8 lg:gap-1 lg:justify-between  items-center pb-8 ">
           <div className="flex justify-center gap-4">
-            <h1 className="text-[20px] lg:text-[48px] md:text-[48px] sm:[48px]">
+            <h1 className="text-[20px] lg:text-[32px] md:text-[32px] sm:[32px]">
               Our <strong className="text-[#F69625]">Menu</strong>
             </h1>
             <div className=" hidden lg:flex justify-center items-center gap-2">

@@ -8,9 +8,9 @@ const App = () => {
   return (
     <div className="px-0">
       {/* <HeaderLayout /> */}
-      <Hero />
+      {/* <Hero /> */}
       <Menu />
-      {/* <Gallery /> */}
+      <Gallery />
     </div>
   );
 };
