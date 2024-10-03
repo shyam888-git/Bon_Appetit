@@ -2,16 +2,17 @@ import "./App.css";
 import Gallery from "./components/Galleries/Galleries";
 import Hero from "./components/Hero/Hero";
 import Menu from "./components/Menu/Menu";
+import Reservation from "./components/Reservation/Reservation";
 import HeaderLayout from "./Layout/HeaderLayout";
 
 const App = () => {
   return (
-    <div className="px-0">
+    <div className="main-container">
       {/* <HeaderLayout /> */}
-      <Hero />
+      {/* <Hero /> */}
       <Menu />
       <Gallery />
-      {/* <Reservation /> */}
+      <Reservation />
     </div>
   );
 };

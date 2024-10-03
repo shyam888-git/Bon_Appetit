@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,8 +28,9 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -53,20 +55,60 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    /* Remove this for responsiveness */
+    /* min-width: 1200px; */
+  }
+
+  /* Apply min-width only for large screens */
+  @media (min-width: 1200px) {
+    body {
+      min-width: 1200px;
+    }
   }
 }
 
+* {
+  font-family: "Manrope", sans-serif;
+}
 
-  * {
-    font-family: "Manrope", sans-serif;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure images don't exceed their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive font sizes */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
