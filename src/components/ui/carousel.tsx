@@ -5,18 +5,18 @@ const Carousel = ({ images, currentSlide }) => {
       className="relative w-full h-full"
       data-carousel="slide"
     >
-      <div className=" h-full overflow-hidden rounded-lg">
+      <div className="h-full w-full relative overflow-hidden">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
+            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
             data-carousel-item
           >
             <img
               src={image}
-              className="absolute block w-full h-full object-cover"
+              className="w-full h-full object-cover" // Ensures the image covers the entire container while maintaining its aspect ratio
               alt={`Slide ${index + 1}`}
             />
           </div>

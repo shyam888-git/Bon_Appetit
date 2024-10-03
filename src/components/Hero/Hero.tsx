@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import image1 from "../../assets/HeroImages/image 6.png";
 import image2 from "../../assets/HeroImages/image 7.png";
 import image3 from "../../assets/HeroImages/image 8.png";
@@ -23,19 +22,19 @@ const Hero = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1000) {
-        setItemsToShow(4); // 4 items
-      } else if (window.innerWidth > 600) {
-        setItemsToShow(3); // 3 items
+        setItemsToShow(4); // 4 items on large screens
+      } else if (window.innerWidth > 800) {
+        setItemsToShow(3); // 3 items on medium screens
+      } else if (window.innerWidth > 500) {
+        setItemsToShow(2); // 2 items on smaller screens
       } else if (window.innerWidth > 340) {
-        setItemsToShow(2); // 2 items
+        setItemsToShow(1); // 1 item on mobile screens
       } else {
-        setItemsToShow(1); // 1 item
+        setItemsToShow(1); // Fallback for very small screens
       }
     };
 
     window.addEventListener("resize", handleResize);
-
-    // Call once to set initial state
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
@@ -55,10 +54,11 @@ const Hero = () => {
 
   return (
     <div className="bg-[#FAFAFA] py-8">
-      <div className="container mx-16 px-4">
-        <div className="flex flex-col lg:flex-row justify-start items-center mb-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-center items-center mb-8">
+          {/* Text Section */}
           <div className="grid items-center px-2">
-            <div className="flex flex-row items-center lg:items-start mb-6 lg:mb-0">
+            <div className="flex flex-row items-center md:items-start mb-6 md:mb-0">
               <h2 className="text-6xl lg:text-8xl text-[#F69625] font-bold">
                 HOT
               </h2>
@@ -76,29 +76,31 @@ const Hero = () => {
             <span className="text-center">Available till 5th Sept</span>
           </div>
 
+          {/* Offers Section */}
           <div className="flex items-center space-x-4">
-            {/* <FaChevronLeft
-              size={24}
-              onClick={prevSlide}
-              className={`cursor-pointer ${
-                currentIndex === 0 ? "opacity-50" : "opacity-100"
-              }`}
-            /> */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="11"
-              height="19"
-              viewBox="0 0 11 19"
-              fill="none"
-              onClick={prevSlide}
-              className={`cursor-pointer ${
-                currentIndex === 0 ? "opacity-50" : "opacity-100"
-              }`}
-            >
-              <path d="M10 17.5L2 9.5L10 1.5" stroke="black" stroke-width="2" />
-            </svg>
+            {/* Left Chevron */}
+            {window.innerWidth > 600 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="19"
+                viewBox="0 0 11 19"
+                fill="none"
+                onClick={prevSlide}
+                className={`cursor-pointer ${
+                  currentIndex === 0 ? "opacity-50" : "opacity-100"
+                }`}
+              >
+                <path
+                  d="M10 17.5L2 9.5L10 1.5"
+                  stroke="black"
+                  strokeWidth="2"
+                />
+              </svg>
+            )}
 
-            <div className="flex lg:gap-8 md:lg-6  overflow-x-auto lg:overflow-x-visible">
+            {/* Offers Grid */}
+            <div className="flex lg:gap-8 md:lg-6 overflow-x-auto lg:overflow-visible">
               {offers
                 .slice(currentIndex, currentIndex + itemsToShow)
                 .map((offer, index) => (
@@ -110,7 +112,7 @@ const Hero = () => {
                         className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full object-cover"
                       />
                     </div>
-                    <span className=" text-lg text-[#402E32] md:text-xl mt-2">
+                    <span className="text-lg text-[#402E32] md:text-xl mt-2">
                       {offer.name}
                     </span>
                     <div className="flex items-center space-x-2">
@@ -124,26 +126,25 @@ const Hero = () => {
                   </div>
                 ))}
             </div>
-            {/* <FaChevronRight
-              size={24}
-              onClick={nextSlide}
-             
-            /> */}
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="11"
-              height="19"
-              viewBox="0 0 11 19"
-              fill="none"
-              className={`cursor-pointer ${
-                currentIndex + itemsToShow >= offers.length
-                  ? "opacity-50"
-                  : "opacity-100"
-              }`}
-            >
-              <path d="M1 1.5L9 9.5L1 17.5" stroke="black" stroke-width="2" />
-            </svg>
+            {/* Right Chevron */}
+            {window.innerWidth > 600 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="19"
+                viewBox="0 0 11 19"
+                fill="none"
+                onClick={nextSlide}
+                className={`cursor-pointer ${
+                  currentIndex + itemsToShow >= offers.length
+                    ? "opacity-50"
+                    : "opacity-100"
+                }`}
+              >
+                <path d="M1 1.5L9 9.5L1 17.5" stroke="black" strokeWidth="2" />
+              </svg>
+            )}
           </div>
         </div>
       </div>

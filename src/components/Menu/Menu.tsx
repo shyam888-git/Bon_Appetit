@@ -26,11 +26,19 @@ const offers = [
   { name: "Broad Lassagne", price: 25.0, originalPrice: 35.0, image: image2 },
   { name: "Chicken Salad", price: 25.0, originalPrice: 35.0, image: image3 },
   { name: "Rice Lassagne", price: 25.0, originalPrice: 35.0, image: image3 },
+  { name: "Steak Toast", price: 25.0, originalPrice: 35.0, image: image1 },
+  { name: "Broad Lassagne", price: 25.0, originalPrice: 35.0, image: image2 },
+  { name: "Chicken Salad", price: 25.0, originalPrice: 35.0, image: image3 },
+  { name: "Rice Lassagne", price: 25.0, originalPrice: 35.0, image: image3 },
+  { name: "Steak Toast", price: 25.0, originalPrice: 35.0, image: image1 },
+  { name: "Broad Lassagne", price: 25.0, originalPrice: 35.0, image: image2 },
+  { name: "Chicken Salad", price: 25.0, originalPrice: 35.0, image: image3 },
+  { name: "Rice Lassagne", price: 25.0, originalPrice: 35.0, image: image3 },
 ];
 
 const Menu = () => {
   return (
-    <div className="bg-[#FFF7EB] min-h-screen flex justify-center overflow-x-auto">
+    <div className="bg-[#FFF7EB]  flex justify-center overflow-x-auto">
       <div className="w-[1200px] p-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl">
@@ -52,7 +60,7 @@ const Menu = () => {
               {categories.map((category, index) => (
                 <span
                   key={index}
-                  className="bg-[#FFEACD] text-[#402E32] text-base text-center px-4 py-2 rounded-[10px] whitespace-nowrap"
+                  className="bg-[#FFEACD] text-[#402E32] text-base text-center  px-5  lg:px-4 py-2 rounded-[10px] whitespace-nowrap"
                   style={{
                     flex: `0 0 calc(100% / ${
                       window.innerWidth >= 1280

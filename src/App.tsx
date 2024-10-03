@@ -7,9 +7,9 @@ import HeaderLayout from "./Layout/HeaderLayout";
 
 const App = () => {
   return (
-    <div className="main-container">
-      {/* <HeaderLayout /> */}
-      {/* <Hero /> */}
+    <div>
+      <HeaderLayout />
+      <Hero />
       <Menu />
       <Gallery />
       <Reservation />
