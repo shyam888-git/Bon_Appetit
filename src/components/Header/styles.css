@@ -1,12 +1,12 @@
 /* Apply the background image to the parent container */
-.background_container {
+/* .background_container {
   background-image: url('../../assets/Background.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; 
    
-}
+} */
 
 /* Styles for the navbar */
 .navbar {

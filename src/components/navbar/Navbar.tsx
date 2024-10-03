@@ -19,8 +19,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center border-[2px] border-[#818080] justify-between py-4 px-4 bg-transparent text-white  top-0 left-0 right-0 z-50 shadow-[0px_4px_6px_rgba(0,0,0,0.1)]  navbar">
-      <div className="flex items-center space-x-4 ">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center border-[2px] border-[#818080] justify-between py-4 px-4 bg-transparent text-white shadow-[0px_4px_6px_rgba(0,0,0,0.1)] navbar">
+      <div className="flex items-center space-x-4">
         {isMobile && <MobileNavbar />}
         <div className="lg:flex items-center space-x-4 hidden logo_container">
           <img src={Logo} alt="Bistro Logo" className="h-8" />
@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
       </div>
       <LargeScreenNavbar />
-      <div className="md:hidden ">
+      <div className="md:hidden">
         <img src={Zerla} alt="Zerla Logo" className="h-8" />
       </div>
       <button className="bg-[#F69625] text-[#FFF] px-4 py-2 rounded-lg hover:bg-[#F69625]">

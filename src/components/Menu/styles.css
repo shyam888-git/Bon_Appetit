@@ -1,8 +1,38 @@
-.menu_container {
+
+
+  .our_menu {
     display: grid;
-    justify-content: center;
+    grid-template-columns: repeat(5,1fr);
     align-items: center;
-    grid-template-columns: repeat(5, 1fr);
+    gap:1.54rem
+    
+  }
+  @media (max-width:1024px){
+    .our_menu {
+     grid-template-columns: repeat(4,1fr);
+  
+    }
+  }
+  
+  @media (max-width:800px){
+    .our_menu {
+     grid-template-columns: repeat(3,1fr);
+  
+    }
+  }
+
+  @media (max-width:500px){
+    .our_menu {
+     grid-template-columns: repeat(2,1fr);
+  
+    }
+  }
+
+  @media (max-width:340px){
+    .our_menu {
+     grid-template-columns: repeat(1,1fr);
+  
+    }
   }
   
   .offer-card {
@@ -18,7 +48,7 @@
   .offer-image {
     width: 150px;
     height: 150px;
-    object-fit: cover; /* Ensures the image maintains aspect ratio and fills the box */
+    object-fit: cover; 
   }
   
   @media (max-width: 1200px) {
@@ -31,5 +61,33 @@
     .menu_container {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  @media (max-width: 500px) {
+    .menu_container {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .menu_container {
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+      gap: 20px;
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 340px) {
+    .menu {
+      font-size: 20px;
+    }
+  
+
   }
   
