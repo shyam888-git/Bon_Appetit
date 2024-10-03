@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Gallery from "./components/Galleries/Galleries";
 import Hero from "./components/Hero/Hero";
 import Menu from "./components/Menu/Menu";
@@ -13,6 +14,7 @@ const App = () => {
       <Menu />
       <Gallery />
       <Reservation />
+      <Footer />
     </div>
   );
 };

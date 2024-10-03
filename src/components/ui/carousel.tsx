@@ -1,4 +1,16 @@
-const Carousel = ({ images, currentSlide }) => {
+import { useEffect, useState } from "react";
+
+const Carousel = ({ images, interval = 5000 }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
+
   return (
     <div
       id="default-carousel"
@@ -9,9 +21,12 @@ const Carousel = ({ images, currentSlide }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
+            className={`absolute top-0 w-full h-full transition-transform duration-1000 ease-in-out ${
+              index === currentSlide ? "translate-x-0" : "translate-x-full"
             }`}
+            style={{
+              transform: `translateX(${(index - currentSlide) * 100}%)`,
+            }}
             data-carousel-item
           >
             <img

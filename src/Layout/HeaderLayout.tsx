@@ -31,7 +31,7 @@ const HeaderLayout = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <Carousel images={backgroundImages} currentSlide={currentSlide} />
+      <Carousel images={backgroundImages} />
 
       <div className="absolute inset-0 z-10">
         <Navbar />
