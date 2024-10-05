@@ -31,7 +31,7 @@ const Carousel = ({ images, interval = 5000 }) => {
           >
             <img
               src={image}
-              className="w-full h-full object-cover" // Ensures the image covers the entire container while maintaining its aspect ratio
+              className="w-full h-full object-cover"
               alt={`Slide ${index + 1}`}
             />
           </div>

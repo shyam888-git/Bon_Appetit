@@ -6,6 +6,7 @@ import background3 from "../assets/Background5.png";
 import background4 from "../assets/Bakground6.png";
 import Carousel from "@/components/ui/carousel";
 import Header from "@/components/Header/Header";
+import MenuCard from "@/components/MenuCard/MenuCard";
 
 const titles = [
   ["Cheese", "Cake"],
@@ -32,9 +33,7 @@ const HeaderLayout = () => {
     <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Carousel images={backgroundImages} />
-      </div>
-      <div className="absolute inset-0 z-20">
-        <Navbar />
+       
       </div>
       <div className="absolute inset-0 z-10 pt-16">
         <Header currentSlide={currentSlide} titles={titles} />

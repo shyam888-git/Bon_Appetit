@@ -6,7 +6,7 @@ import HeaderLayout from "@/Layout/HeaderLayout";
 
 const Home = () => {
   return (
-    <div className="overflow-y-hidden">
+    <div>
       <HeaderLayout />
       <Hero />
       <Menu />

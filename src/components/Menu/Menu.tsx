@@ -1,4 +1,3 @@
-import React from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import image1 from "../../assets/HeroImages/image 6.png";

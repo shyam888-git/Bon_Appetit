@@ -4,6 +4,7 @@ import PublicRoutes from "./PublicRoutes";
 import Menu from "@/components/Menu/Menu";
 import ReservationMain from "@/components/Reservation/ReservationMain";
 import Home from "@/pages/Landing/Home";
+import MenuSection from "@/components/Menu/MenuSection";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/menu",
-    element: <Menu />,
+    element: <MenuSection />,
   },
 ]);
 
