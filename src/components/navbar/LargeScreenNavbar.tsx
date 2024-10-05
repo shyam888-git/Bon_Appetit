@@ -1,21 +1,40 @@
+import "./styles.css";
+const navLink = [
+  {
+    path: "/",
+    name: "HOME",
+  },
+  {
+    path: "/reservation",
+    name: "RESERVATION",
+  },
+  {
+    path: "/menu",
+    name: "MENU",
+  },
+
+  {
+    path: "/offers",
+    name: "OFFERS",
+  },
+  {
+    path: "/contact",
+    name: "CONTACT",
+  },
+];
+
 const LargeScreenNavbar = () => {
   return (
     <>
-      <ul className="hidden md:flex space-x-8">
-        <li className=" cursor-pointer text-[#F69625]">Home</li>
-        <li className="cursor-pointer text-[#fff] hover:text-[#F69625]">
-          RESERVATION
-        </li>
-
-        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
-          MENU
-        </li>
-        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
-          OFFERS
-        </li>
-        <li className="cursor-pointer text-[#FFF] hover:text-[#F69625]">
-          CONTACT
-        </li>
+      <ul className="hidden md:flex space-x-8 ">
+        {navLink.map((link, idx) => (
+          <li
+            key={idx}
+            className="cursor-pointer text-[#fff] hover:text-[#F69625]"
+          >
+            <a href={link.path}>{link.name}</a>
+          </li>
+        ))}
       </ul>
     </>
   );
