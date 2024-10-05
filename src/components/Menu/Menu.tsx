@@ -44,13 +44,46 @@ const Menu = () => {
           <h1 className="text-4xl">
             Our <strong className="text-[#F69625]">Menu</strong>
           </h1>
+          <div className=" hidden lg:flex items-center space-x-2 overflow-x-auto scrollbar-hide">
+            {/* Chevron icons visible only on large screens and above */}
+            <button className="p-2 hidden md:block sm:block lg:block">
+              <FaChevronLeft className="text-[#402E32]" />
+            </button>
+
+            <div className="flex space-x-1">
+              {categories.map((category, index) => (
+                <span
+                  key={index}
+                  className="bg-[#FFEACD] text-[#402E32] text-base text-center  px-5  lg:px-4 py-2 rounded-[10px] whitespace-nowrap"
+                  style={{
+                    flex: `0 0 calc(100% / ${
+                      window.innerWidth >= 1280
+                        ? 7
+                        : window.innerWidth >= 1024
+                        ? 6
+                        : window.innerWidth >= 768
+                        ? 5
+                        : 4
+                    })`,
+                  }}
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+
+            {/* Chevron icons visible only on large screens and above */}
+            <button className="p-2 hidden md:block sm:block lg:block">
+              <FaChevronRight className="text-[#402E32]" />
+            </button>
+          </div>
           <Button className="bg-[#F69625] text-white px-6 py-2 rounded-lg">
             View All
           </Button>
         </div>
 
         <div className="relative mb-8">
-          <div className="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
+          <div className="flex lg:hidden items-center space-x-4 overflow-x-auto scrollbar-hide">
             {/* Chevron icons visible only on large screens and above */}
             <button className="p-2 hidden md:block sm:block lg:block">
               <FaChevronLeft className="text-[#402E32]" />

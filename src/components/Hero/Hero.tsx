@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <div className="bg-[#FAFAFA] py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-center items-center mb-8">
+        <div className="flex flex-col md:flex-row lg:gap-2 justify-center items-center mb-8">
           {/* Text Section */}
           <div className="grid items-center ">
             <div className="flex flex-row items-center md:items-start mb-6 md:mb-0">
