@@ -1,7 +1,8 @@
 * {
   font-family: "Isidora Sans Alt";
-  overflow-y: auto; /* Allow scrolling */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  overflow-y:auto;
+  
+  scrollbar-width: none; 
 }
 
 *::-webkit-scrollbar {

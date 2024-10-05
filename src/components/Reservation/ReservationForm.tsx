@@ -57,7 +57,7 @@ const ReservationForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-[80%] lg:w-1/2 mx-auto bg-[#FAFAFA] py-4 px-4 "
+        className="space-y-4 w-[80%] lg:w-1/2 mx-auto bg-[#FAFAFA] py-8 px-4 "
       >
         <h2 className="text-2xl font-bold mb-6">Book a Table</h2>
         <hr />
@@ -153,6 +153,48 @@ const ReservationForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Reservation Date</FormLabel>
+                <FormControl>
+                  <Input {...field} className="bg-gray-100" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="md:grid md:gap-4 md:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="numberOfPeople"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>No of people</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger className="bg-gray-100">
+                      <SelectValue placeholder="Select" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <SelectItem key={num} value={num.toString()}>
+                        {num}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="occasion"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Occasion</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-gray-100" />
                 </FormControl>

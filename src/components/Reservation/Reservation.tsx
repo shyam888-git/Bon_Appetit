@@ -1,4 +1,3 @@
-import React from "react";
 import ReservationTitle from "./ReservationTitle";
 import ReservationForm from "./ReservationForm";
 
