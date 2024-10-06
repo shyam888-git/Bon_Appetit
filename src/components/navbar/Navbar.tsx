@@ -5,7 +5,7 @@ import Bistra from "../../assets/Bistro.png";
 import Logo from "../../assets/Logo.png";
 import "./styles.css";
 import Zerla from "../../assets/Zarla.png";
-
+import Icon from "@/assets/Booking (1).png";
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 760);
 
@@ -17,6 +17,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center border-[2px] border-[#818080] justify-between py-4 px-4 bg-transparent text-white shadow-[0px_4px_6px_rgba(0,0,0,0.1)] navbar">
@@ -31,7 +32,10 @@ const Navbar = () => {
       <div className="md:hidden">
         <img src={Zerla} alt="Zerla Logo" className="h-8" />
       </div>
-      <button className="bg-[#F69625] text-[#FFF] px-4 py-2 rounded-lg hover:bg-[#F69625]">
+      <button className="bg-[#F69625] text-[#FFF]  flex justify-center items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#F69625]">
+        <span>
+          <img src={Icon} alt="home" />
+        </span>{" "}
         Book a Table
       </button>
     </nav>

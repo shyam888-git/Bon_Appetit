@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "@/components/navbar/Navbar";
+import { useState, useEffect } from "react";
 import background1 from "../assets/Background1.png";
 import background2 from "../assets/Background2..png";
 import background3 from "../assets/Background5.png";
 import background4 from "../assets/Bakground6.png";
 import Carousel from "@/components/ui/carousel";
 import Header from "@/components/Header/Header";
-import MenuCard from "@/components/MenuCard/MenuCard";
 
 const titles = [
   ["Cheese", "Cake"],
@@ -33,7 +31,6 @@ const HeaderLayout = () => {
     <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Carousel images={backgroundImages} />
-       
       </div>
       <div className="absolute inset-0 z-10 pt-16">
         <Header currentSlide={currentSlide} titles={titles} />

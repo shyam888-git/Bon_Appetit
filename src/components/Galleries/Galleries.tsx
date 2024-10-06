@@ -1,9 +1,7 @@
 import Image1 from "@/assets/Gallery/Gallery1.png";
 import Image2 from "@/assets/Gallery/Gallery2.png";
 import Image3 from "@/assets/Gallery/Gallery3.png";
-// import "./styles.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = [
   {
