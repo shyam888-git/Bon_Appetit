@@ -1,0 +1,24 @@
+* {
+  font-family: "Isidora Sans Alt";
+  overflow-y:auto;
+  
+  scrollbar-width: none; 
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+.background_container {
+  background-image: url('../../assets/Background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.main-container {
+  padding: 0 16px;
+  overflow-y: hidden; 
+  width: 100%;
+}
+

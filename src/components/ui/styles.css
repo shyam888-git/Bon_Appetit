@@ -1,0 +1,16 @@
+.embla {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .embla__container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition between images */
+  }
+  
+  .embla__slide {
+    flex: 0 0 100%; /* Take up the full width of the container */
+    height: 100vh; /* Full height */
+    position: relative; /* Allow absolute positioning of content if needed */
+  }
+  

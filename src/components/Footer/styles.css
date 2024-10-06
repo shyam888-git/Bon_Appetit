@@ -1,0 +1,39 @@
+.footer-container {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  .logo-section {
+    img {
+      width: 100%;
+      max-width: 150px;
+    }
+  }
+
+  .info-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .about-section, .contact-section, .booking-section, .social-section {
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .social-section {
+      img {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
