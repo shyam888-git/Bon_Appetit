@@ -1,6 +1,7 @@
 import Image1 from "@/assets/Gallery/Gallery1.png";
 import Image2 from "@/assets/Gallery/Gallery2.png";
 import Image3 from "@/assets/Gallery/Gallery3.png";
+// import "./styles.css";
 import { useEffect, useState } from "react";
 
 const images = [
@@ -80,17 +81,14 @@ const Gallery = () => {
         } justify-center items-center -mx-2`}
       >
         {!isMobile && (
-          // <FaChevronLeft
-          //   size={24}
-          //   className="cursor-pointer"
-          //   onClick={canGoPrevious ? handlePrevious : undefined}
-          // />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="11"
             height="19"
             viewBox="0 0 11 19"
             fill="none"
+            className="cursor-pointer"
+            onClick={canGoPrevious ? handlePrevious : undefined}
           >
             <path d="M10 17.5L2 9.5L10 1.5" stroke="black" stroke-width="2" />
           </svg>
@@ -115,17 +113,14 @@ const Gallery = () => {
         ))}
 
         {!isMobile && (
-          // <FaChevronRight
-          //   size={24}
-          //   className="cursor-pointer"
-          //   onClick={canGoNext ? handleNext : undefined}
-          // />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="11"
             height="19"
             viewBox="0 0 11 19"
             fill="none"
+            className="cursor-pointer"
+            onClick={canGoNext ? handleNext : undefined}
           >
             <path d="M1 1.5L9 9.5L1 17.5" stroke="black" stroke-width="2" />
           </svg>
