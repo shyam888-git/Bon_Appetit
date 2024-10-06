@@ -30,7 +30,7 @@ const LargeScreenNavbar = () => {
         {navLink.map((link, idx) => (
           <li
             key={idx}
-            className="cursor-pointer text-[#fff] hover:text-[#F69625]"
+            className="cursor-pointer text-[#bdbbbb] hover:text-[#F69625]"
           >
             <a href={link.path}>{link.name}</a>
           </li>

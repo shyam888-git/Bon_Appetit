@@ -1,12 +1,12 @@
 import Menu from "./Menu";
 
-const ReservationMain = () => {
+const MenuSection = () => {
   return (
     <div className="bg-[#FFF7EB] w-full py-16 ">
       {/* Wrapping all the borders and text in a column */}
       <div className="flex justify-between items-center space-x-4 my-8 ">
         {/* Upper row of borders */}
-        <div className="flex-1 grid justify-start items-center gap-2 ">
+        <div className="flex-1 grid justify-start items-center gap-1 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-full max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[1000px]"
@@ -33,7 +33,7 @@ const ReservationMain = () => {
         </h2>
 
         {/* Lower row of borders */}
-        <div className="flex-1 grid justify-end items-center gap-2">
+        <div className="flex-1 grid justify-end items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-full max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-full"
@@ -61,4 +61,4 @@ const ReservationMain = () => {
   );
 };
 
-export default ReservationMain;
+export default MenuSection;
