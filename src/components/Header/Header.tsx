@@ -24,7 +24,7 @@ const Header = ({ currentSlide, titles }) => {
           <MenuCard />
         ) : (
           <>
-            <div className="button_title mt-32">
+            <div className="button_title mt-80">
               <span>{mainTitle} </span>
               <span className="mt-[-8px]">{subTitle} </span>
             </div>

@@ -26,7 +26,7 @@ const navLink = [
 const LargeScreenNavbar = () => {
   return (
     <>
-      <ul className="hidden md:flex space-x-8 ">
+      <ul className="hidden md:flex space-x-8  transparent-navbar">
         {navLink.map((link, idx) => (
           <li
             key={idx}
