@@ -18,16 +18,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@radix-ui/react-popover";
-import { CalendarIcon } from "@radix-ui/react-icons";
-import { Textarea } from "../ui/textarea";
-import { Calendar } from "../ui/calendar";
-import { cn } from "@/lib/utils";
+
 import { format } from "date-fns";
+import { Textarea } from "../ui/textarea";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
