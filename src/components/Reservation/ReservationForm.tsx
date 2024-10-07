@@ -19,6 +19,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { format } from "date-fns";
+import { Textarea } from "../ui/textarea";
+
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
@@ -121,27 +124,24 @@ const ReservationForm = () => {
         <div className="md:grid md:gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
-            name="numberOfPeople"
+            name="reservationDate"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Reservation Date</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className="bg-gray-100">
-                      <SelectValue placeholder="Select" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <SelectItem key={num} value={num.toString()}>
-                        {num}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="date"
+                    onChange={(e) => {
+                      const formattedDate = format(
+                        new Date(e.target.value),
+                        "dd/mm/yy"
+                      );
+                      field.onChange(formattedDate); // Format date as dd/MM/yy
+                    }}
+                    className="bg-gray-100"
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -151,7 +151,7 @@ const ReservationForm = () => {
             name="occasion"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Reservation Date</FormLabel>
+                <FormLabel>Reservation Time</FormLabel>
                 <FormControl>
                   <Input {...field} className="bg-gray-100" />
                 </FormControl>
@@ -173,7 +173,7 @@ const ReservationForm = () => {
                 >
                   <FormControl>
                     <SelectTrigger className="bg-gray-100">
-                      <SelectValue placeholder="Select" />
+                      <SelectValue placeholder="" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -204,40 +204,16 @@ const ReservationForm = () => {
         </div>
         <div className="md:grid md:gap-4 md:grid-cols-2">
           <FormField
-            control={form.control}
-            name="numberOfPeople"
+            // control={form.control}
+            name="note"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>No of people</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className="bg-gray-100">
-                      <SelectValue placeholder="Select" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <SelectItem key={num} value={num.toString()}>
-                        {num}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="occasion"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Occasion</FormLabel>
+              <FormItem className="col-span-8">
+                <FormLabel>Note</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-gray-100" />
+                  <Textarea
+                    {...field}
+                    className=" focus:ring-0 placeholder:text-xs rounded-md px-5 py-4 border"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
