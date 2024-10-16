@@ -40,7 +40,7 @@ const LandingForm = () => {
   };
 
   return (
-    <div className="w-[517px] py-4 rounded-lg bg-white text-white mt-12 px-16">
+    <div className=" lg:w-[517px] w-full py-4 rounded-lg bg-white text-white mt-12 px-16">
       <p className="text-center text-[32px] text-[#F69625] leading-3xl mb-4 ">
         Get In Touch
       </p>
