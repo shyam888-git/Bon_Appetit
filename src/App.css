@@ -1,6 +1,6 @@
 * {
   font-family: "Isidora Sans Alt";
-  overflow-y:auto;
+   /* overflow-y:auto;  */
   
   scrollbar-width: none; 
 }
@@ -18,7 +18,20 @@
 
 .main-container {
   padding: 0 16px;
-  overflow-y: hidden; 
+   overflow-y: hidden;  
   width: 100%;
 }
 
+.button {
+  font-family: 'Brilliant Fighter';
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  background: rgba(255, 255, 255, 0.70);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}

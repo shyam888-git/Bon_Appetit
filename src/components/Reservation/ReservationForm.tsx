@@ -212,7 +212,7 @@ const ReservationForm = () => {
                 <FormControl>
                   <Textarea
                     {...field}
-                    className=" focus:ring-0 placeholder:text-xs rounded-md px-5 py-4 border"
+                    className="  placeholder:text-xs rounded-md px-5 py-4 border"
                   />
                 </FormControl>
                 <FormMessage />
@@ -229,7 +229,7 @@ const ReservationForm = () => {
           >
             Cancel
           </Button>
-          <Button type="submit" className="bg-[#F69625] text-white">
+          <Button type="submit" variant='default' className="bg-[#F69625] text-white">
             Book it
           </Button>
         </div>

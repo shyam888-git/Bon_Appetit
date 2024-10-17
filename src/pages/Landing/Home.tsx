@@ -12,7 +12,6 @@ const Home = () => {
       <Menu />
       <Gallery />
       <Reservation />
-      {/* <CookieConsent /> */}
     </div>
   );
 };

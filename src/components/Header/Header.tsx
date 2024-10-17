@@ -31,6 +31,16 @@ const Header = ({ currentSlide, titles }) => {
 
   return (
     <section className="relative">
+      {!isMobile && (
+        <div className="flex justify-end items-center mr-12 mt-4">
+          <Button
+            type="submit"
+            className="bg-[#F69625] text-[#FFF] font-bold flex justify-center items-center gap-2 px-6 py-5 mt-4 hover:bg-[#F69625]"
+          >
+            Video
+          </Button>
+        </div>
+      )}
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-screen text-white">
         {isMobile ? (

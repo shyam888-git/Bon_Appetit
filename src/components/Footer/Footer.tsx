@@ -1,5 +1,5 @@
-import facebook from "@/assets/SocialMedia/Instagram.png";
-import instagram from "@/assets/SocialMedia/TwitterX.png";
+import facebook from "@/assets/SocialMedia/Facebook.png";
+import instagram from "@/assets/SocialMedia/Instagram (1).png";
 import twitter from "@/assets/SocialMedia/TwitterX.png";
 import Zarla from "@/assets/SocialMedia/Zarla.png";
 import ZarlaIcon from "@/assets/SocialMedia/Zarla2.png";
@@ -52,9 +52,39 @@ const Footer = () => {
         <div className="grid justify-center items-center text-center mb-6">
           <h2 className="text-[#000] font-bold">OUR SOCIALS</h2>
           <div className="flex justify-center items-center gap-4 mt-2">
-            <img src={facebook} alt="facebook" className="w-6 h-6" />
-            <img src={instagram} alt="instagram" className="w-6 h-6" />
-            <img src={twitter} alt="twitter" className="w-6 h-6" />
+            <a
+              href="https://www.facebook.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={facebook}
+                alt="facebook"
+                className="w-6 h-6 cursor-pointer"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={instagram}
+                alt="instagram"
+                className="w-6 h-6 cursor-pointer"
+              />
+            </a>
+            <a
+              href="https://www.twitter.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={twitter}
+                alt="twitter"
+                className="w-6 h-6 cursor-pointer"
+              />
+            </a>
           </div>
         </div>
       </div>

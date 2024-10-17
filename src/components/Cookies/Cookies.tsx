@@ -26,7 +26,7 @@ const CookieConsent = () => {
           </button>
         </div>
         <div className="flex justify-between mb-4">
-          <div className="text-center">
+          <div className="text-center space-y-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="37"
@@ -41,9 +41,9 @@ const CookieConsent = () => {
                 fill="#C2C2C2"
               />
             </svg>
-            <p className="text-xs">No Cookies</p>
+            <p className="text-xs text-[#402E32]">No Cookies</p>
           </div>
-          <div className="text-center">
+          <div className="text-center space-y-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="37"
@@ -58,9 +58,9 @@ const CookieConsent = () => {
                 fill="#F69625"
               />
             </svg>
-            <p className="text-xs">Only Essentials</p>
+            <p className="text-xs text-[#402E32]">Only Essentials</p>
           </div>
-          <div className="text-center">
+          <div className="text-center space-y-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="37"
@@ -75,7 +75,7 @@ const CookieConsent = () => {
                 fill="#C2C2C2"
               />
             </svg>
-            <p className="text-xs">All Cookies</p>
+            <p className="text-xs text-[#402E32] ">All Cookies</p>
           </div>
         </div>
         <div className="flex justify-between items-center w-full relative">
