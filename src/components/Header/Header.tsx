@@ -2,18 +2,31 @@ import { useEffect, useState } from "react";
 import MenuCard from "../MenuCard/MenuCard";
 import { Button } from "../ui/button";
 import "./styles.css";
+import CookieConsent from "../Cookies/Cookies";
+
 const Header = ({ currentSlide, titles }) => {
   const [mainTitle, subTitle] = titles[currentSlide];
-
   const [isMobile, setIsMobile] = useState(window.innerWidth < 760);
+  const [showCookieConsent, setShowCookieConsent] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 760);
     };
 
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setShowCookieConsent(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -35,6 +48,8 @@ const Header = ({ currentSlide, titles }) => {
             >
               See Menu
             </Button>
+
+            {showCookieConsent && <CookieConsent />}
           </>
         )}
       </div>
