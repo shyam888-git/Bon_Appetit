@@ -52,11 +52,11 @@ const MobileNavbar = () => {
       </button>
       {isOpen && (
         <div className="absolute top-full left-0 w-full max-w-[250px] h-[225px] bg-white bg-opacity-90 z-50">
-          <ul className="flex flex-col items-start py-4 px-6">
+          <ul className="flex flex-col items-start gap-6 py-4 px-6">
             {navLink.map((link, idx) => (
               <li
                 key={idx}
-                className="cursor-pointer text-[#000] font-[18px] hover:text-[#F69625]"
+                className="cursor-pointer text-[#000] grid space-y-6 font-[18px] hover:text-[#F69625]"
               >
                 <a href={link.path}>{link.name}</a>
               </li>

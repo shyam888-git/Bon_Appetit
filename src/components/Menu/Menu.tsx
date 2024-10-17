@@ -55,7 +55,7 @@ const Menu = () => {
   );
   return (
     <div className="bg-[#FFF7EB]  flex justify-center overflow-x-auto ">
-      <div className="w-[1200px] p-8">
+      <div className="sm:w-[1200px] w-full p-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl">
             Our <strong className="text-[#F69625]">Menu</strong>
