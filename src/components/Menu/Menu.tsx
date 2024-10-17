@@ -61,7 +61,6 @@ const Menu = () => {
             Our <strong className="text-[#F69625]">Menu</strong>
           </h1>
           <div className=" hidden lg:flex items-center space-x-2 overflow-x-auto scrollbar-hide">
-            {/* Chevron icons visible only on large screens and above */}
             <button
               className="p-2 hidden sm:block"
               onClick={handlePrevious}
@@ -74,7 +73,7 @@ const Menu = () => {
               {visibleCategories.map((category, index) => (
                 <span
                   key={index}
-                  className="bg-[#FFEACD] text-[#402E32] text-base text-center px-5 py-2 rounded-[10px] whitespace-nowrap"
+                  className="bg-[#FFEACD] text-[#402E32] cursor-pointer text-base text-center px-5 py-2 rounded-[10px] whitespace-nowrap"
                   style={{
                     backgroundColor:
                       category === "Trending" ? "#F69625" : "#FFEACD",
@@ -115,7 +114,7 @@ const Menu = () => {
               {visibleCategories.map((category, index) => (
                 <span
                   key={index}
-                  className="bg-[#FFEACD] text-[#402E32] text-base text-center px-5 py-2 rounded-[10px] whitespace-nowrap"
+                  className="bg-[#FFEACD] text-[#402E32] cursor-pointer text-base text-center px-5 py-2 rounded-[10px] whitespace-nowrap"
                   style={{
                     backgroundColor:
                       category === "Trending" ? "#F69625" : "#FFEACD",
