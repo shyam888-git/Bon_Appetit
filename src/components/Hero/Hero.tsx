@@ -3,7 +3,6 @@ import image1 from "../../assets/HeroImages/image 6.png";
 import image2 from "../../assets/HeroImages/image 7.png";
 import image3 from "../../assets/HeroImages/image 8.png";
 import image4 from "../../assets/HeroImages/image 9.png";
-import CookieConsent from "../Cookies/Cookies";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
