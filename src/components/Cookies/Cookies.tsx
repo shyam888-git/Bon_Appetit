@@ -1,6 +1,16 @@
 import { X } from "lucide-react";
+import { useState } from "react";
 
 const CookieConsent = () => {
+  const [visible, setVisible] = useState(true);
+
+  const handleClose = () => {
+    setVisible(false);
+  };
+
+  if (!visible) {
+    return null;
+  }
   return (
     <div className=" bg-black bg-opacity-50 flex justify-end relative left-96 top-12">
       <div className="bg-white rounded-lg p-6 w-96 relative">
@@ -8,7 +18,10 @@ const CookieConsent = () => {
           <h2 className="text-[24px] font-[600]  text-[#402E32]">
             Cookies Consent
           </h2>
-          <button className="text-gray-500 hover:text-gray-700">
+          <button
+            className="text-gray-500 hover:text-gray-700"
+            onClick={handleClose}
+          >
             <X size={20} />
           </button>
         </div>
