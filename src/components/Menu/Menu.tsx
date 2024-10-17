@@ -5,6 +5,7 @@ import image2 from "../../assets/HeroImages/image 7.png";
 import image3 from "../../assets/HeroImages/image 8.png";
 import image4 from "../../assets/HeroImages/image 9.png";
 import "./styles.css";
+import { useState } from "react";
 
 const categories = [
   "Trending",
@@ -36,6 +37,22 @@ const offers = [
 ];
 
 const Menu = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemCategories = 6;
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - itemCategories, 0));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      Math.min(prevIndex + itemCategories, categories.length - itemCategories)
+    );
+  };
+
+  const visibleCategories = categories.slice(
+    currentIndex,
+    currentIndex + itemCategories
+  );
   return (
     <div className="bg-[#FFF7EB]  flex justify-center overflow-x-auto ">
       <div className="w-[1200px] p-8">
@@ -45,12 +62,16 @@ const Menu = () => {
           </h1>
           <div className=" hidden lg:flex items-center space-x-2 overflow-x-auto scrollbar-hide">
             {/* Chevron icons visible only on large screens and above */}
-            <button className="p-2 hidden md:block sm:block lg:block">
+            <button
+              className="p-2 hidden md:block sm:block lg:block"
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+            >
               <FaChevronLeft className="text-[#402E32]" />
             </button>
 
             <div className="flex space-x-1">
-              {categories.map((category, index) => (
+              {visibleCategories.map((category, index) => (
                 <span
                   key={index}
                   className="bg-[#FFEACD] text-[#402E32] text-base text-center  px-5  lg:px-5 py-2 rounded-[10px] whitespace-nowrap"
@@ -75,7 +96,11 @@ const Menu = () => {
             </div>
 
             {/* Chevron icons visible only on large screens and above */}
-            <button className="p-2 hidden md:block sm:block lg:block">
+            <button
+              className="p-2 hidden md:block sm:block lg:block"
+              onClick={handleNext}
+              disabled={currentIndex + itemCategories >= categories.length}
+            >
               <FaChevronRight className="text-[#402E32]" />
             </button>
           </div>
@@ -87,16 +112,24 @@ const Menu = () => {
         <div className="relative mb-8">
           <div className="flex lg:hidden items-center space-x-4 overflow-x-auto scrollbar-hide">
             {/* Chevron icons visible only on large screens and above */}
-            <button className="p-2 hidden md:block sm:block lg:block">
+            <button
+              className="p-2 hidden md:block sm:block lg:block"
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+            >
               <FaChevronLeft className="text-[#402E32]" />
             </button>
 
             <div className="flex space-x-4">
-              {categories.map((category, index) => (
+              {visibleCategories.map((category, index) => (
                 <span
                   key={index}
                   className="bg-[#FFEACD] text-[#402E32] text-base text-center  px-5  lg:px-4 py-2 rounded-[10px] whitespace-nowrap"
                   style={{
+                    backgroundColor:
+                      category === "Trending" ? "#F69625" : "#FFEACD",
+                    color: category === "Trending" ? "white" : "#000",
+                    fontFamily: "Isidora Sans Alt",
                     flex: `0 0 calc(100% / ${
                       window.innerWidth >= 1280
                         ? 7
@@ -114,7 +147,11 @@ const Menu = () => {
             </div>
 
             {/* Chevron icons visible only on large screens and above */}
-            <button className="p-2 hidden md:block sm:block lg:block">
+            <button
+              className="p-2 hidden md:block sm:block lg:block"
+              onClick={handleNext}
+              disabled={currentIndex + itemCategories >= categories.length}
+            >
               <FaChevronRight className="text-[#402E32]" />
             </button>
           </div>
