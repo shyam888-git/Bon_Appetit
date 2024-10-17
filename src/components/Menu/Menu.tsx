@@ -38,6 +38,8 @@ const offers = [
 
 const Menu = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  
   const itemCategories = 6;
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - itemCategories, 0));
@@ -49,6 +51,7 @@ const Menu = () => {
     );
   };
 
+  const visibleOffers = showAll ? offers : offers.slice(0, 10);
   const visibleCategories = categories.slice(
     currentIndex,
     currentIndex + itemCategories
@@ -94,8 +97,11 @@ const Menu = () => {
               <FaChevronRight className="text-[#402E32]" />
             </button>
           </div>
-          <Button className="bg-[#F69625] text-white px-6 py-2 rounded-lg">
-            View All
+          <Button
+            className="bg-[#F69625] text-white px-6 py-2 rounded-lg"
+            onClick={() => setShowAll((prev) => !prev)}
+          >
+            {showAll ? "Show Less" : "View All"}
           </Button>
         </div>
 
@@ -138,7 +144,7 @@ const Menu = () => {
         </div>
 
         <div className="our_menu">
-          {offers.map((offer, index) => (
+          {visibleOffers.map((offer, index) => (
             <div key={index} className="flex flex-col items-center">
               <img
                 src={offer.image}
