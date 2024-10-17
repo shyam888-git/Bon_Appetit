@@ -27,7 +27,7 @@ const MobileNavbar = () => {
         )}
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 w-full max-w-[250px] h-[300px] bg-white bg-opacity-90 z-50">
+        <div className="absolute top-full left-0 w-full max-w-[250px] h-[225px] bg-white bg-opacity-90 z-50">
           <ul className="flex flex-col items-start py-4 px-6">
             <li className="py-2 text-yellow-400">HOME</li>
             <li className="py-2 text-gray-800">RESERVATION</li>
