@@ -39,7 +39,7 @@ const offers = [
 const Menu = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
-  
+
   const itemCategories = 6;
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - itemCategories, 0));
