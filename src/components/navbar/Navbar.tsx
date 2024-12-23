@@ -27,8 +27,13 @@ const Navbar = () => {
       <div className="flex items-center space-x-4">
         {isMobile && <MobileNavbar />}
         <div className="lg:flex items-center space-x-4 hidden logo_container">
-          <img src={Logo} alt="Bistro Logo" className="h-8"  />
-          <img src={Bistra} alt="Bistro" className="h-8" />
+          <a href="/">
+            {" "}
+            <img src={Logo} alt="Bistro Logo" className="h-8" />
+          </a>
+          <a href="/">
+            <img src={Bistra} alt="Bistro" className="h-8" />
+          </a>
         </div>
       </div>
       <LargeScreenNavbar />

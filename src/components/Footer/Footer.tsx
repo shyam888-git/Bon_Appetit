@@ -3,6 +3,7 @@ import instagram from "@/assets/SocialMedia/Instagram (1).png";
 import twitter from "@/assets/SocialMedia/TwitterX.png";
 import Zarla from "@/assets/SocialMedia/Zarla.png";
 import ZarlaIcon from "@/assets/SocialMedia/Zarla2.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -92,9 +93,15 @@ const Footer = () => {
       <hr className="my-4" />
 
       <div className="flex flex-wrap justify-center items-center gap-6 text-center text-sm mb-4">
-        <span>Privacy Policy</span>
-        <span>Terms and Conditions</span>
-        <span>Cookies Policy</span>
+        <a href="privacy-policy">
+          <span>Privacy Policy</span>
+        </a>
+        <a href="terms-conditions">
+          <span>Terms and Conditions</span>
+        </a>
+        <a href="privacy-policy">
+          <span>Cookies Policy</span>
+        </a>
       </div>
     </div>
   );

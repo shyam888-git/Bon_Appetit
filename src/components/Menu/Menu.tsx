@@ -50,7 +50,9 @@ const Menu = () => {
               {visibleCategories.map((category, index) => (
                 <span
                   key={index}
-                  className="bg-[#FFEACD] text-[#402E32] cursor-pointer text-base text-center px-5 py-2 rounded-[10px] whitespace-nowrap"
+                  className="bg-[#FFEACD] text-[#402E32]
+                   cursor-pointer text-base text-center px-5 
+                   py-2 rounded-[10px] whitespace-nowrap"
                   style={{
                     backgroundColor: category === item ? "#F69625" : "#FFEACD",
                     color: category === item ? "white" : "#000",
