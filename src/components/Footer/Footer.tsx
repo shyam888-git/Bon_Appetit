@@ -3,7 +3,6 @@ import instagram from "@/assets/SocialMedia/Instagram (1).png";
 import twitter from "@/assets/SocialMedia/TwitterX.png";
 import Zarla from "@/assets/SocialMedia/Zarla.png";
 import ZarlaIcon from "@/assets/SocialMedia/Zarla2.png";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

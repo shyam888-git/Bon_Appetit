@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import MenuCard from "../MenuCard/MenuCard";
 import { Button } from "../ui/button";
 import "./styles.css";
-import CookieConsent from "../Cookies/Cookies";
+// import CookieConsent from "../Cookies/Cookies";
 
 const Header = ({ currentSlide, titles }) => {
   const [mainTitle, subTitle] = titles[currentSlide];
   const [isMobile, setIsMobile] = useState(window.innerWidth < 760);
   const [showCookieConsent, setShowCookieConsent] = useState(true);
+  console.log(mainTitle,subTitle,showCookieConsent,setShowCookieConsent);
 
   useEffect(() => {
     const handleResize = () => {
