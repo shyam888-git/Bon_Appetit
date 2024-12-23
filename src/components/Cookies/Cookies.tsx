@@ -12,7 +12,7 @@ const CookieConsent = () => {
     return null;
   }
   return (
-    <div className=" bg-black bg-opacity-50 flex justify-end relative left-96 top-12">
+    <div className=" bg-black bg-opacity-50 flex justify-end relative left-96 top-2">
       <div className="bg-white rounded-lg p-6 w-96 relative">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-[24px] font-[600]  text-[#402E32]">

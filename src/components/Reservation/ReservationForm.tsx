@@ -121,7 +121,7 @@ const ReservationForm = () => {
           />
         </div>
 
-        <div className="md:grid md:gap-4 md:grid-cols-2">
+        <div className="md:grid md:gap-4 md:grid-cols-2 border-red-600 ">
           <FormField
             control={form.control}
             name="reservationDate"
@@ -133,11 +133,17 @@ const ReservationForm = () => {
                     {...field}
                     type="date"
                     onChange={(e) => {
-                      const formattedDate = format(
-                        new Date(e.target.value),
-                        "dd/mm/yy"
-                      );
-                      field.onChange(formattedDate); // Format date as dd/MM/yy
+                      // Format the date using date-fns
+                      const dateValue = e.target.value;
+                      if (dateValue) {
+                        const formattedDate = format(
+                          new Date(dateValue),
+                          "yyyy-MM-dd"
+                        );
+                        field.onChange(formattedDate);
+                      } else {
+                        field.onChange("");
+                      }
                     }}
                     className="bg-gray-100"
                   />
@@ -146,6 +152,7 @@ const ReservationForm = () => {
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="occasion"
@@ -229,7 +236,11 @@ const ReservationForm = () => {
           >
             Cancel
           </Button>
-          <Button type="submit" variant='default' className="bg-[#F69625] text-white">
+          <Button
+            type="submit"
+            variant="default"
+            className="bg-[#F69625] text-white"
+          >
             Book it
           </Button>
         </div>

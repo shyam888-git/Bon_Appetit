@@ -2,30 +2,29 @@ import { useEffect, useState } from "react";
 import MenuCard from "../MenuCard/MenuCard";
 import { Button } from "../ui/button";
 import "./styles.css";
-import CookieConsent from "../Cookies/Cookies";
+// import CookieConsent from "../Cookies/Cookies";
 
 const Header = ({ currentSlide, titles }) => {
   const [mainTitle, subTitle] = titles[currentSlide];
   const [isMobile, setIsMobile] = useState(window.innerWidth < 760);
   const [showCookieConsent, setShowCookieConsent] = useState(true);
+  console.log(mainTitle,subTitle,showCookieConsent,setShowCookieConsent);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 760);
     };
 
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setShowCookieConsent(false);
-      }
-    };
+    // const handleScroll = () => {
+    //   if (window.scrollY > 0) {
+    //     setShowCookieConsent(false);
+    //   }
+    // };
 
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -47,19 +46,20 @@ const Header = ({ currentSlide, titles }) => {
           <MenuCard />
         ) : (
           <>
-            <div className="button_title mt-80">
-              <span>{mainTitle} </span>
-              <span className="mt-[-8px]">{subTitle} </span>
+            <div className="flex  justify-center  ">
+              <div className="">
+                <Button
+                  type="submit"
+                  className="bg-yellow-500 text-white px-6 py-3 
+                relative bottom-8
+                rounded-lg hover:bg-yellow-600 "
+                >
+                  See Menu
+                </Button>
+              </div>
+              {/* {showCookieConsent && <CookieConsent />} */}
             </div>
-
-            <Button
-              type="submit"
-              className="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 mt-4"
-            >
-              See Menu
-            </Button>
-
-            {showCookieConsent && <CookieConsent />}
+            
           </>
         )}
       </div>

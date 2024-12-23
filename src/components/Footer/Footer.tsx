@@ -92,9 +92,15 @@ const Footer = () => {
       <hr className="my-4" />
 
       <div className="flex flex-wrap justify-center items-center gap-6 text-center text-sm mb-4">
-        <span>Privacy Policy</span>
-        <span>Terms and Conditions</span>
-        <span>Cookies Policy</span>
+        <a href="privacy-policy">
+          <span>Privacy Policy</span>
+        </a>
+        <a href="terms-conditions">
+          <span>Terms and Conditions</span>
+        </a>
+        <a href="privacy-policy">
+          <span>Cookies Policy</span>
+        </a>
       </div>
     </div>
   );
