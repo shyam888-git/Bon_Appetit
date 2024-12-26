@@ -2,13 +2,20 @@ import { useEffect, useState } from "react";
 import MenuCard from "../MenuCard/MenuCard";
 import { Button } from "../ui/button";
 import "./styles.css";
+import CookieConsent from "../Cookies/Cookies";
+import { useNavigate } from "react-router-dom";
 // import CookieConsent from "../Cookies/Cookies";
 
 const Header = ({ currentSlide, titles }) => {
   const [mainTitle, subTitle] = titles[currentSlide];
   const [isMobile, setIsMobile] = useState(window.innerWidth < 760);
   const [showCookieConsent, setShowCookieConsent] = useState(true);
-  console.log(mainTitle,subTitle,showCookieConsent,setShowCookieConsent);
+  const [showVideo, setShowVideo] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/menu");
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,14 +36,20 @@ const Header = ({ currentSlide, titles }) => {
   }, []);
 
   return (
-    <section className="relative">
+    <section className="relative ">
       {!isMobile && (
-        <div className="flex justify-end items-center mr-12 mt-4">
+        <div className="flex justify-end items-center max-w-[1500px] mt-4">
           <Button
-            type="submit"
-            className="bg-[#F69625] text-[#FFF] font-bold flex justify-center items-center gap-2 px-6 py-5 mt-4 hover:bg-[#F69625]"
+            type="button"
+            className="bg-[#F69625] text-[#FFF] 
+            
+            cusror-pointer
+            font-bold flex justify-center items-center gap-2 px-6 py-5 mt-4 hover:bg-[#F69625]"
+            onClick={() => {
+              setShowVideo((prev) => !prev); // Toggle the state
+            }}
           >
-            Video
+            {showVideo ? "Video" : "Photo"}
           </Button>
         </div>
       )}
@@ -46,20 +59,18 @@ const Header = ({ currentSlide, titles }) => {
           <MenuCard />
         ) : (
           <>
-            <div className="flex  justify-center  ">
-              <div className="">
-                <Button
-                  type="submit"
-                  className="bg-yellow-500 text-white px-6 py-3 
+            <div className="flex  justify-center  items-center  ">
+              <Button
+                type="submit"
+                className="bg-yellow-500 text-white px-6 py-3 
                 relative bottom-8
                 rounded-lg hover:bg-yellow-600 "
-                >
-                  See Menu
-                </Button>
-              </div>
-              {/* {showCookieConsent && <CookieConsent />} */}
+                onClick={handleNavigation}
+              >
+                See Menu
+              </Button>
+              {showCookieConsent && <CookieConsent />}
             </div>
-            
           </>
         )}
       </div>
