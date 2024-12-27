@@ -121,14 +121,17 @@ const Menu = () => {
         </div>
 
         {visibleOffers?.length < 1 ? (
-          <div className="text-center text-sm mt-2 py-2 text-black">
+          <div className=" text-sm mt-2 py-2  text-[#402E32] text-center mb-1">
             {" "}
             Data Not Available{" "}
           </div>
         ) : (
-          <div className="our_menu">
+          <div className="our_menu justify-center flex">
             {visibleOffers.map((offer, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <div
+                key={index}
+                className="flex flex-col justify-center items-center"
+              >
                 <img
                   src={offer.image}
                   alt={offer.name}

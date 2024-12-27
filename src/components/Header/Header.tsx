@@ -37,28 +37,24 @@ const Header = ({ currentSlide, titles }) => {
 
   return (
     <section className="relative ">
-      {!isMobile && (
-        <div className="flex justify-end items-center max-w-[1500px] mt-4">
-          <Button
-            type="button"
-            className="bg-[#F69625] text-[#FFF] 
-            
-            cusror-pointer
-            font-bold flex justify-center items-center gap-2 px-6 py-5 mt-4 hover:bg-[#F69625]"
-            onClick={() => {
-              setShowVideo((prev) => !prev); // Toggle the state
-            }}
-          >
-            {showVideo ? "Video" : "Photo"}
-          </Button>
-        </div>
-      )}
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-screen text-white">
         {isMobile ? (
           <MenuCard />
         ) : (
           <>
+            <div className="flex justify-end items-center w-[1200px] relative top-[-265px] left-12 mt-4">
+              <Button
+                type="button"
+                className="bg-[#F69625] text-[#FFF] 
+                  cursor-pointer font-bold py-5 mt-4 hover:bg-[#F69625]"
+                onClick={() => {
+                  setShowVideo((prev) => !prev); // Toggle the state
+                }}
+              >
+                {showVideo ? "Video" : "Photo"}
+              </Button>
+            </div>
             <div className="flex  justify-center  items-center  ">
               <Button
                 type="submit"
@@ -69,7 +65,7 @@ const Header = ({ currentSlide, titles }) => {
               >
                 See Menu
               </Button>
-              {showCookieConsent && <CookieConsent />}
+              {/* {showCookieConsent && <CookieConsent />} */}
             </div>
           </>
         )}

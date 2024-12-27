@@ -71,8 +71,9 @@ const Gallery = () => {
 
   return (
     <div className="grid justify-center p-4">
-      <h2 className="text-3xl  text-[#402E32] mb-6 mt-6">
-        Booking for <strong className="text-[#F69625] ">Events</strong>
+      <h2 className="text-3xl px-16  text-[#402E32] mb-6 mt-6">
+        Booking for{" "}
+        <strong className="text-[#F69625] ">Events</strong>
       </h2>
 
       <div

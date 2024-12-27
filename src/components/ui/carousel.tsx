@@ -37,6 +37,7 @@ const Carousel = ({ images, interval = 5000 }) => {
           </div>
         ))}
       </div>
+      
     </div>
   );
 };
