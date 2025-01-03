@@ -6,7 +6,7 @@ const TermsConditions = () => {
           Terms &<strong className="text-[#F69625] px-2 ">Conditions</strong>
         </h1>
 
-        <p className="text-justify text-base leading-relaxed">
+        <p className="text-justify  leading-relaxed text-lg">
           We build a range of services that help millions of people daily to
           explore and interact with the world in new ways. Our services include:
           Google apps, sites, and devices, like Search, YouTube, and Google Home
